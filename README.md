@@ -38,3 +38,25 @@ The initial local target is:
 - The Gemma Scope repos are open and can be downloaded selectively.
 - The base Gemma 3 repos are gated, so local download requires a Hugging Face account that has accepted the Gemma license.
 - We are intentionally not mirroring the full Gemma Scope repos because they are far larger than what we need for Frame-Scope iteration.
+
+## Testing local inference
+
+Run a quick local inference smoke test with:
+
+```bash
+./.venv/bin/python scripts/test_local_inference.py
+```
+
+Useful variants:
+
+```bash
+./.venv/bin/python scripts/test_local_inference.py --device cpu
+./.venv/bin/python scripts/test_local_inference.py --prompt "Explain frame operators in transformers in one paragraph."
+./.venv/bin/python scripts/test_local_inference.py --max-new-tokens 96 --temperature 0.7
+./.venv/bin/python scripts/test_local_inference.py --max-new-tokens 256
+./.venv/bin/python scripts/test_local_inference.py --include-prompt
+```
+
+The script loads the local model from `artifacts/models/gemma-3-1b-it` with `local_files_only=True`, prefers `mps` when available, and otherwise falls back to `cpu`.
+The stopping budget is controlled by `--max-new-tokens`, which is a token limit rather than a character limit.
+By default it prints only the newly generated continuation; pass `--include-prompt` to print the full prompt plus completion.
