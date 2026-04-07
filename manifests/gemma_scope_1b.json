@@ -1,0 +1,62 @@
+{
+  "base_models": [
+    {
+      "repo_id": "google/gemma-3-1b-it",
+      "local_dir": "artifacts/models/gemma-3-1b-it",
+      "gated": true,
+      "purpose": "interactive_generation"
+    },
+    {
+      "repo_id": "google/gemma-3-1b-pt",
+      "local_dir": "artifacts/models/gemma-3-1b-pt",
+      "gated": true,
+      "purpose": "analysis_optional"
+    }
+  ],
+  "sae_releases": [
+    {
+      "repo_id": "google/gemma-scope-2-1b-it",
+      "local_dir": "artifacts/saes/gemma-scope-2-1b-it",
+      "sites": [
+        "resid_post",
+        "attn_out",
+        "mlp_out",
+        "transcoder"
+      ],
+      "layers": [
+        7,
+        13,
+        17,
+        22
+      ],
+      "width": "65k",
+      "l0": "medium",
+      "files": [
+        "config.json",
+        "params.safetensors"
+      ]
+    },
+    {
+      "repo_id": "google/gemma-scope-2-1b-pt",
+      "local_dir": "artifacts/saes/gemma-scope-2-1b-pt",
+      "sites": [
+        "resid_post",
+        "attn_out",
+        "mlp_out",
+        "transcoder"
+      ],
+      "layers": [
+        7,
+        13,
+        17,
+        22
+      ],
+      "width": "65k",
+      "l0": "medium",
+      "files": [
+        "config.json",
+        "params.safetensors"
+      ]
+    }
+  ]
+}

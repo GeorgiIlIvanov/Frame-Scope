@@ -1,0 +1,26 @@
+[project]
+name = "frame-scope"
+version = "0.1.0"
+description = "Local Gemma Scope setup and observability tooling for Frame-Scope."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "accelerate>=1.2.0",
+  "huggingface_hub[cli]>=1.0.0",
+  "numpy>=1.26.0",
+  "safetensors>=0.5.0",
+  "sae-lens>=6.10.0",
+  "sentencepiece>=0.2.0",
+  "torch>=2.6.0",
+  "transformers>=4.53.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

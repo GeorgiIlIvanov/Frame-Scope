@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.DS_Store
+*.egg-info/
+
+artifacts/
+logs/
+
+# Explicit local model / SAE artifacts for Frame-Scope.
+artifacts/models/gemma-3-1b-it/
+artifacts/models/gemma-3-1b-pt/
+artifacts/saes/gemma-scope-2-1b-it/
+artifacts/saes/gemma-scope-2-1b-pt/
+
+.pytest_cache/
+.mypy_cache/
